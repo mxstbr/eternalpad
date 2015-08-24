@@ -10,7 +10,7 @@ window.onload = function() {
     if (err) {
       textarea.value = "Sorry, your browser is not supported by Eternalpad. Switch to a modern browser to get full functionality.";
     } else {
-      textarea.value = value || 'Welcome to Eternalpad.\n\nWrite something here, then refresh the page.\nYour note will still be here, waiting for you.';
+      textarea.value = value || 'Welcome to Eternalpad.\n\nWrite something here, then refresh the page.\nYour note will still be here, waiting for you.\n\nEternalpad is perfect for jotting down shopping lists, phone numbers, license plates, etc.\nNever search for a pen or for that one specific note again.';
       // Save the text onkeyup and onblur
       textarea.onkeyup = changeContent;
       textarea.onblur = changeContent;
