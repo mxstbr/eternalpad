@@ -18,20 +18,6 @@ window.onload = function() {
     // If local storage is not supported, display an error message
     textarea.value = "Sorry, your browser is not supported by Eternalpad. Switch to a modern browser to get full functionality.";
   }
-
-  // Analytics
-  var owa_baseUrl = 'http://analytics.mxstbr.com/';
-  var owa_cmds = owa_cmds || [];
-  owa_cmds.push(['setSiteId', '203b56d88b1f6b6bcf90a257d663a44e']);
-  owa_cmds.push(['trackPageView']);
-  owa_cmds.push(['trackClicks']);
-  owa_cmds.push(['trackDomStream']);
-  (function() {
-    var _owa = document.createElement('script'); _owa.type = 'text/javascript'; _owa.async = true;
-    owa_baseUrl = ('https:' == document.location.protocol ? window.owa_baseSecUrl || owa_baseUrl.replace(/http:/, 'https:') : owa_baseUrl );
-    _owa.src = owa_baseUrl + 'modules/base/js/owa.tracker-combined-min.js';
-    var _owa_s = document.getElementsByTagName('script')[0]; _owa_s.parentNode.insertBefore(_owa, _owa_s);
-  }());
 };
 
 // Saves the content to localStorage and sets the new textarea value
