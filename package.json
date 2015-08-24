@@ -3,6 +3,7 @@
   "version": "0.0.2",
   "description": "One-off, device specific notes.",
   "dependencies": {
+    "localforage": "^1.2.7"
   },
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
