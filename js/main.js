@@ -14,8 +14,15 @@ window.onload = function() {
       // Save the text onkeyup and onblur
       textarea.onkeyup = changeContent;
       textarea.onblur = changeContent;
-      // Focus textarea to open virtual keyboards on touch devices
+    }
+    // Move caret to end of textarea, taken from http://davidwalsh.name/caret-end
+    if (typeof textarea.selectionStart == "number") {
+      textarea.selectionStart = textarea.selectionEnd = textarea.value.length;
+    } else if (typeof textarea.createTextRange != "undefined") {
       textarea.focus();
+      var range = textarea.createTextRange();
+      range.collapse(false);
+      range.select();
     }
   });
 };
