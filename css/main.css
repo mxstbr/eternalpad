@@ -1,3 +1,4 @@
 @import './vendor/_normalize.css';
 @import './base/_base.css';
+@import './base/_print.css';
 @import './components/_textarea.css';
