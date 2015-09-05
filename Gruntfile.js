@@ -81,6 +81,20 @@ module.exports = function(grunt) {
             {expand: true, src: '*', dest: 'build', filter: 'isFile'} // Copy the rest
           ]
         }
+      },
+      buildcontrol: {
+        options: {
+          dir: 'build',
+          commit: true,
+          push: true,
+          message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+        },
+        pages: {
+          options: {
+            remote: 'git@github.com:mxstbr/eternalpad.git',
+            branch: 'gh-pages'
+          }
+        }
       }
   });
 
@@ -93,7 +107,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-open');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-build-control');
   // Set the default task to running a server and watching files
   grunt.registerTask('default', ['postcss', 'browserify', 'connect', 'open', 'watch']);
   grunt.registerTask('build', ['postcss', 'browserify', 'uglify', 'copy:build']);
+  grunt.registerTask('deploy', ['build', 'buildcontrol:pages']); // build and deploy
 };
