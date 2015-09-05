@@ -111,4 +111,5 @@ module.exports = function(grunt) {
   // Set the default task to running a server and watching files
   grunt.registerTask('default', ['postcss', 'browserify', 'connect', 'open', 'watch']);
   grunt.registerTask('build', ['postcss', 'browserify', 'uglify', 'copy:build']);
+  grunt.registerTask('deploy', ['build', 'buildcontrol:pages']); // build and deploy
 };
