@@ -6,6 +6,12 @@ One-off, device specific notes. Perfect for quickly jotting down shopping lists,
 
 It saves the notes in localStorage and shows the saved notes when users open the webpage again. See `js/main.js`.
 
+### Offline Support
+
+Eternalpad uses a `ServiceWorker` and `AppCache` to be fully offline capable. See `serviceworker.js` for the `ServiceWorker`, and `app.appcache` for the `AppCache` implementation.
+
+It also uses a Web App Manifest, which means we control what it looks like when users `Add to Homescreen` on Chrome on Android. See `mainfest.json` to see what that looks like.
+
 ## Setup
 
 1. Run `npm install` to install the dependencies.
